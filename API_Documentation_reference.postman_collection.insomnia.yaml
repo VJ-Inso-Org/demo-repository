@@ -1,0 +1,412 @@
+type: collection.insomnia.rest/5.0
+name: 'API Documentation #reference'
+meta:
+  id: fld_1985bb3ca567f6d38e09d620202f0f92
+  created: 1753885166166
+  modified: 1753885166166
+  isPrivate: false
+  description: |-
+    This template contains a boilerplate for documentation that you can quickly customize and reuse.
+
+    ### How to use this template:
+
+    - Replace the content given brackets (()) with your API's details.
+    - Tips are formatted in `codespan` - feel free to read and remove them.
+        
+
+    ---
+
+    `Start with a brief overview of what your API offers.`
+
+    The ((product name)) provides many API products, tools, and resources that enable you to ((add product value here)).
+
+    `You can also list the APIs you offer, link to the relevant pages, or do both in this section.`
+
+    ## **Getting started guide**
+
+    `List the steps or points required to start using your APIs. Make sure to cover everything required to reach success with your API as quickly as possible.`
+
+    To start using the ((add APIs here)), you need to -
+
+    `The points given below are from The Postman API's documentation. You can reference it to write your own getting started guide.`
+
+    - You must use a valid API Key to send requests to the API endpoints. You can get your API key from Postman's [integrations dashboard](https://go.postman.co/settings/me/api-keys).
+    - The API has [rate and usage limits](https://learning.postman.com/docs/developer/postman-api/postman-api-rate-limits/).
+    - The API only responds to HTTPS-secured communications. Any requests sent via HTTP return an HTTP 301 redirect to the corresponding HTTPS resources.
+    - The API returns request responses in JSON format. When an API request returns an error, it is sent in the JSON response as an error key.
+        
+
+    ## Authentication
+
+    `Add details on the authorization keys/tokens required, steps that cover how to get them, and the relevant error codes.`
+
+    The ((product name)) API uses ((add your API's authorization type)) for authentication.
+
+    `The details given below are from the Postman API's documentation. You can reference it to write your own authentication section.`
+
+    Postman uses API keys for authentication. You can generate a Postman API key in the [API keys](https://postman.postman.co/settings/me/api-keys) section of your Postman account settings.
+
+    You must include an API key in each request to the Postman API with the X-Api-Key request header.
+
+    ### Authentication error response
+
+    If an API key is missing, malformed, or invalid, you will receive an HTTP 401 Unauthorized response code.
+
+    ## Rate and usage limits
+
+    `Use this section to cover your APIs' terms of use. Include API limits, constraints, and relevant error codes, so consumers understand the permitted API usage and practices.`
+
+    `The example given below is from The Postman API's documentation. Use it as a reference to write your APIs' terms of use.`
+
+    API access rate limits apply at a per-API key basis in unit time. The limit is 300 requests per minute. Also, depending on your plan, you may have usage limits. If you exceed either limit, your request will return an HTTP 429 Too Many Requests status code.
+
+    Each API response returns the following set of headers to help you identify your use status:
+
+    | Header | Description |
+    | --- | --- |
+    | `X-RateLimit-Limit` | The maximum number of requests that the consumer is permitted to make per minute. |
+    | `X-RateLimit-Remaining` | The number of requests remaining in the current rate limit window. |
+    | `X-RateLimit-Reset` | The time at which the current rate limit window resets in UTC epoch seconds. |
+
+    ### 503 response
+
+    An HTTP `503` response from our servers indicates there is an unexpected spike in API access traffic. The server is usually operational within the next five minutes. If the outage persists or you receive any other form of an HTTP `5XX` error, [contact support](https://support.postman.com/hc/en-us/requests/new/).
+
+    ### **Need some help?**
+
+    `Add links that customers can refer to whenever they need help.`
+
+    In case you have questions, go through our tutorials ((link to your video or help documentation here)). Or visit our FAQ page ((link to the relevant page)).
+
+    Or you can check out our community forum, there’s a good chance our community has an answer for you. Visit our developer forum ((link to developer forum)) to review topics, ask questions, and learn from others.
+
+    `You can also document or add links to libraries, code examples, and other resources needed to make a request.`
+collection:
+  - name: User
+    description: The `/me` endpoints let you manage information about the authenticated user.
+    environment: {}
+    environmentPropertyOrder: {}
+    scripts:
+      preRequest: ''
+      afterResponse: ''
+    authentication: {}
+    headers: []
+    meta:
+      id: fld_1985bb3ca567f6d38e07aa00ea3d0ba0
+      created: 1753885166166
+      modified: 1753885166166
+      isPrivate: false
+      description: The `/me` endpoints let you manage information about the authenticated user.
+      sortKey: -1753885166166
+    children:
+      - name: Get authenticated user
+        description: Gets information about the authenticated user.
+        url: https://api.getpostman.com/me
+        method: GET
+        body: {}
+        headers: []
+        parameters: []
+        pathParameters: []
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e077513afa6e8fb
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: Gets information about the authenticated user.
+          sortKey: -1753885166166
+  - name: Collections
+    description: The `/collections` endpoints let you manage your [collections](https://learning.postman.com/docs/sending-requests/intro-to-collections/).
+    environment: {}
+    environmentPropertyOrder: {}
+    scripts:
+      preRequest: ''
+      afterResponse: ''
+    authentication: {}
+    headers: []
+    meta:
+      id: fld_1985bb3ca567f6d38e0e588e0c4a4e1c
+      created: 1753885166166
+      modified: 1753885166166
+      isPrivate: false
+      description: The `/collections` endpoints let you manage your [collections](https://learning.postman.com/docs/sending-requests/intro-to-collections/).
+      sortKey: -1753885166165
+    children:
+      - name: Create a collection
+        description: |-
+          Creates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:
+
+          *   `info` — An **object** that contains the following properties:
+              *   `name` — A **string** value that contains the collection's name.
+              *   `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.
+          *   `item` — An **object** that contains the HTTP request and response information.
+              *   `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.
+
+          **Note:**
+
+          *   For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):
+              *   `info` object — Use the `definitions.info` entry.
+              *   `item` object — Use the `definitions.items` entry.
+          *   For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+        url: https://api.getpostman.com/collections
+        method: POST
+        body:
+          mimeType: text/plain
+          text: |-
+            {
+                "collection": {
+                    "info": {
+                        "name": "{{collectionName}}",
+                        "schema": "{{collectionSchemaUrl}}"
+                    },
+                    "item": [
+                        {
+                            "request": {}
+                        }
+                    ]
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        parameters:
+          - name: workspace
+            value: '{{workspaceId}}'
+            disabled: true
+        pathParameters:
+          - name: workspace
+            value: '{{workspaceId}}'
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e0a446daef629dd
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: |-
+            Creates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:
+
+            *   `info` — An **object** that contains the following properties:
+                *   `name` — A **string** value that contains the collection's name.
+                *   `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.
+            *   `item` — An **object** that contains the HTTP request and response information.
+                *   `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.
+
+            **Note:**
+
+            *   For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):
+                *   `info` object — Use the `definitions.info` entry.
+                *   `item` object — Use the `definitions.items` entry.
+            *   For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+          sortKey: -1753885166166
+      - name: Get a collection
+        description: Gets information about a collection. For a complete list of this endpoint's possible values, use the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+        url: https://api.getpostman.com/collections/{{collectionId}}
+        method: GET
+        body: {}
+        headers: []
+        parameters:
+          - name: access_key
+            value: '{{accessKey}}'
+            disabled: true
+        pathParameters:
+          - name: access_key
+            value: '{{accessKey}}'
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e0b944ea4169657
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: Gets information about a collection. For a complete list of this endpoint's possible values, use the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+          sortKey: -1753885166165
+      - name: Delete a collection
+        description: Deletes a collection.
+        url: https://api.getpostman.com/collections/{{collectionId}}
+        method: DELETE
+        body: {}
+        headers: []
+        parameters: []
+        pathParameters: []
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e022c6337cf49a9
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: Deletes a collection.
+          sortKey: -1753885166164
+      - name: Update a collection
+        description: |-
+          Updates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:
+
+          - `info` — An **object** that contains the following properties:
+              - `name` — A **string** value that contains the collection's name.
+              - `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.
+          - `item` — An **object** that contains the HTTP request and response information.
+              - `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.
+
+          **Note:**
+
+          - For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):
+              - `info` object — Use the `definitions.info` entry.
+              - `item` object — Use the `definitions.items` entry.
+          - For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+              
+
+          ### Important
+
+          Use caution when using this endpoint. The system will replace the existing collection with the values passed in the request body.
+        url: https://api.getpostman.com/collections/{{collectionId}}
+        method: PUT
+        body:
+          mimeType: text/plain
+          text: |-
+            {
+                "collection": {
+                    "info": {
+                        "name": "{{collectionName}}",
+                        "schema": "{{collectionSchemaUrl}}"
+                    },
+                    "item": [
+                        {
+                            "request": {}
+                        }
+                    ]
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        parameters: []
+        pathParameters: []
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e070d3589f33872
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: |-
+            Updates a collection using the [Postman Collection v2 schema format](https://schema.postman.com/json/collection/v2.1.0/docs/index.html). Include a `collection` object in the request body that contains the following required properties:
+
+            - `info` — An **object** that contains the following properties:
+                - `name` — A **string** value that contains the collection's name.
+                - `schema` — A **string** that contains a URL to the collection's schema. For example, the `https://schema.getpostman.com/collection/v1` URL.
+            - `item` — An **object** that contains the HTTP request and response information.
+                - `request` — An **object** that contains the collection's request information. For a complete list of values, refer to the `definitions.request` entry in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json). If you pass an empty object for this value, the system defaults to an untitled GET request.
+
+            **Note:**
+
+            - For a complete list of available property values for this endpoint, use the following references available in the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json):
+                - `info` object — Use the `definitions.info` entry.
+                - `item` object — Use the `definitions.items` entry.
+            - For all other possible values, refer to the [collection.json schema file](https://schema.postman.com/json/collection/v2.1.0/collection.json).
+                
+
+            ### Important
+
+            Use caution when using this endpoint. The system will replace the existing collection with the values passed in the request body.
+          sortKey: -1753885166163
+      - name: Get all collections
+        description: Gets all of your [collections](https://www.getpostman.com/docs/collections). The response includes all of your subscribed collections.
+        url: https://api.getpostman.com/collections
+        method: GET
+        body: {}
+        headers: []
+        parameters:
+          - name: workspace
+            value: '{{workspaceId}}'
+            disabled: true
+        pathParameters:
+          - name: workspace
+            value: '{{workspaceId}}'
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca567f6d38e095988560bd30f
+          created: 1753885166166
+          modified: 1753885166166
+          isPrivate: false
+          description: Gets all of your [collections](https://www.getpostman.com/docs/collections). The response includes all of your subscribed collections.
+          sortKey: -1753885166162
+environments:
+  name: Base Environment
+  meta:
+    id: env_a1e9270ebc234874ae8c6c938a879289
+    created: 1753885166166
+    modified: 1753885166166
+    isPrivate: false
+  data:
+    baseUrl: https://farming-simulator.pstmn.io
+cookieJar:
+  name: Cookie Jar
+  meta:
+    id: jar_f306ef4339854dcbabd5d2b4d0b43fe5
+    created: 1753885166166
+    modified: 1753885166166
+    isPrivate: false
+  cookies: []
