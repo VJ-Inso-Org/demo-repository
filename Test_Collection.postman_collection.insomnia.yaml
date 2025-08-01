@@ -1,0 +1,172 @@
+type: collection.insomnia.rest/5.0
+name: Test Collection
+meta:
+  id: fld_1985bb3ca50132bcdbff817669843c38
+  created: 1753885166161
+  modified: 1753885166161
+  isPrivate: false
+  description: ''
+collection:
+  - name: Dummy Response
+    description: ''
+    environment: {}
+    environmentPropertyOrder: {}
+    scripts:
+      preRequest: ''
+      afterResponse: ''
+    authentication: {}
+    headers: []
+    meta:
+      id: fld_1985bb3ca50132bcdbf637eb631fb8d8
+      created: 1753885166161
+      modified: 1753885166161
+      isPrivate: false
+      description: ''
+      sortKey: -1753885166161
+    children:
+      - name: XML
+        description: ''
+        url: http://httpbin.org/xml
+        method: GET
+        body: {}
+        headers: []
+        parameters: []
+        pathParameters: []
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca50132bcdbf69e34345c9faa
+          created: 1753885166161
+          modified: 1753885166161
+          isPrivate: false
+          description: ''
+          sortKey: -1753885166161
+      - name: JSON
+        description: ''
+        url: http://httpbin.org/json
+        method: GET
+        body: {}
+        headers: []
+        parameters: []
+        pathParameters: []
+        authentication: {}
+        scripts:
+          preRequest: ''
+          afterResponse: ''
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          rebuildPath: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+        meta:
+          id: req_1985bb3ca50132bcdbf10c9c7dfe43d6
+          created: 1753885166161
+          modified: 1753885166161
+          isPrivate: false
+          description: ''
+          sortKey: -1753885166160
+  - name: Mock
+    description: ''
+    url: http://echo.free.beeceptor.com
+    method: GET
+    body: {}
+    headers:
+      - name: Name
+        value: '{{collection.Name}}'
+      - name: Id
+        value: '{{collection.Id}}'
+    parameters: []
+    pathParameters: []
+    authentication: {}
+    scripts:
+      preRequest: |
+        // Generate current timestamp in ISO format
+        const timestamp = new Date().toISOString();
+
+        // Add custom header with the timestamp
+        insomnia.request.headers.add({ key: "X-Timestamp", value: timestamp });
+      afterResponse: |
+        // Set current timestamp as a variable
+        let timestamp = new Date().toISOString();
+        insomnia.environment.set("X_Timestamp", timestamp);
+
+        // Log it for debugging
+        console.log("Simulated X-Timestamp header:", timestamp);
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      rebuildPath: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+    meta:
+      id: req_1985bb3ca50132bcdbf8eddf61b0acd1
+      created: 1753885166161
+      modified: 1753885166161
+      isPrivate: false
+      description: ''
+      sortKey: -1753885166160
+  - name: Postman API
+    description: ''
+    url: https://api.getpostman.com/environments
+    method: GET
+    body: {}
+    headers:
+      - name: x-api-key
+        value: PMAK-1985bb3ca50132bcdbf8eddf61b0acd1
+    parameters:
+      - name: workspace
+        value: 74102872-3255-4e2a-84ae-bc3e40b51358
+        disabled: false
+    pathParameters:
+      - name: workspace
+        value: 74102872-3255-4e2a-84ae-bc3e40b51358
+    authentication: {}
+    scripts:
+      preRequest: ''
+      afterResponse: ''
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      rebuildPath: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+    meta:
+      id: req_1985bb3ca50132bcdbfe356ba7d79bed
+      created: 1753885166161
+      modified: 1753885166161
+      isPrivate: false
+      description: ''
+      sortKey: -1753885166159
+environments:
+  name: Base Environment
+  meta:
+    id: env_9ea8389fa315462fbe529c5e3953ca1b
+    created: 1753885166161
+    modified: 1753885166161
+    isPrivate: false
+  data: {}
+cookieJar:
+  name: Cookie Jar
+  meta:
+    id: jar_4d753f70c1314747b0a9f222ee99e717
+    created: 1753885166161
+    modified: 1753885166161
+    isPrivate: false
+  cookies: []
